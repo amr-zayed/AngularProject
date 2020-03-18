@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class StudentsComponent implements OnInit {
 
   constructor() { }
-  @Input studentsList: string[]
+  @Input() studentsList: string;
   ngOnInit(): void {
   }
 }
