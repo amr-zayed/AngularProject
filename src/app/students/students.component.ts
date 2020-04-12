@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { StudentService } from 'src/app/student.service'
 
 @Component({
   selector: 'app-students',
@@ -7,8 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StudentsComponent implements OnInit {
 
-  constructor() { }
-  @Input() studentsList: string;
+  constructor(private studservice: StudentService) { }
+  @Input() studentsList: string[];
   ngOnInit(): void {
+    this.studentsList=this.studservice.GetArrrayOfStudents();
   }
 }
